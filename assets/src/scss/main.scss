@@ -1,0 +1,34 @@
+:root {
+    --blue-color: #4285f4;
+    --green-color: #00c851;
+    --red-color: #ff3547;
+    --indigo-color: #6200ee;
+    --purple-color: #aa66cc;
+    --primary-color: #fff;
+}
+@import "./fonts";
+@import "./theme";
+
+
+#splash-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+.template-cards {
+    width: 50vh;
+    overflow: auto;
+}
+
+.gjs-cv-canvas {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .gjs-toolbar {
+        left: 0 !important;
+    }
+}

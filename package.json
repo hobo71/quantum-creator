@@ -1,0 +1,75 @@
+{
+	"name": "quantum-creator",
+	"productName": "Quantum Creator",
+	"version": "0.0.0",
+	"description": "A simple app to make web development better, extendable and easier.",
+	"license": "MIT",
+	"repository": "https://github.com/TheComputerM/quantum-creator",
+	"author": {
+		"name": "TheComputerM",
+		"email": "mudit.harshit99@gmail.com",
+		"url": "https://thecomputerm.github.io/"
+	},
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"compile": "gulp compile",
+		"pretty": "prettier --write \" assets/src/**/*.ts \" ",
+		"start": "electron .",
+		"dev": "concurrently --kill-others \"npm run start\" \"npm run compile\" ",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder --windows"
+	},
+	"dependencies": {
+		"animejs": "^3.1.0",
+		"betterial": "^1.1.2",
+		"electron-context-menu": "^0.12.1",
+		"electron-debug": "^3.0.0",
+		"electron-store": "^3.3.0",
+		"electron-unhandled": "^2.2.0",
+		"electron-updater": "^4.0.6",
+		"electron-util": "^0.12.0",
+		"fs-extra": "^8.1.0",
+		"grapesjs": "^0.15.3",
+		"jquery": "^3.4.1",
+		"node-html-parser": "^1.1.16",
+		"node-waves": "^0.7.6"
+	},
+	"devDependencies": {
+		"concurrently": "^4.1.2",
+		"electron": "^5.0.4",
+		"electron-builder": "^20.44.4",
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.2.0",
+		"gulp-sass": "^4.0.2",
+		"husky": "^3.0.5",
+		"node-sass": "^4.12.0",
+		"prettier": "^1.18.2",
+		"rollup": "^1.20.3",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-typescript": "^1.0.1",
+		"tslib": "^1.10.0",
+		"typescript": "^3.6.2"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run pretty"
+		}
+	},
+	"build": {
+		"appId": "com.thecomputerm.quantum-creator",
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64",
+						"ia32"
+					]
+				}
+			]
+		},
+		"directories": {
+			"output": "./releases/"
+		}
+	}
+}

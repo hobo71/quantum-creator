@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="node_modules/betterial/dist/css/betterial.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./assets/dist/css/main.css" />
+		<title>Quantum Creator</title>
+	</head>
+	<body>
+		<div class="fully-centered" id="splash-screen">
+			<div class="container center-align">
+				<img src="./build/icon.png" alt="Icon" style="width: 300px;" />
+				<br /><br />
+				<div>
+					<a
+						href="#new-project-modal"
+						class="btn green waves-effect modal-trigger"
+						id="new-project-btn"
+					>
+						Create New Project
+					</a>
+					<a
+						href="#!"
+						class="btn deep-purple waves-effect waves-light"
+						id="open-project-btn"
+					>
+						Open Existing Project
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="editor"></div>
+
+		<div class="modal" id="new-project-modal">
+			<div class="modal-dialog responsive">
+				<div class="modal-content">
+					<h4 class="font-weight-light">Create New Project</h4>
+					<div class="row">
+						<div class="col s12">
+							<div class="text-field with-icon-left">
+								<input
+									type="text"
+									id="new-project-name-input"
+									value="Cool Project"
+								/>
+								<i class="material-icons">work</i>
+								<label
+									for="new-project-name-input"
+									class="active"
+								>
+									Project Name
+								</label>
+							</div>
+							<br />
+						</div>
+						<div class="col s12 m8">
+							<div class="text-field">
+								<input
+									type="text"
+									id="new-project-path-input"
+									readonly
+									placeholder="Project Path"
+								/>
+							</div>
+						</div>
+						<div class="col s12 m4 center-align">
+							<a
+								href="#!"
+								class="btn cyan-outline waves-effect"
+								style="display: block"
+								id="new-project-select-folder-btn"
+							>
+								Select Folder
+							</a>
+						</div>
+					</div>
+					<div class="template-cards">
+						<div class="row">
+							<div class="col s12 m4"></div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a
+						href="#new-project-modal"
+						class="btn green modal-close waves-effect waves-light"
+						id="create-new-project-btn"
+					>
+						Create
+					</a>
+					<a
+						href="#new-project-modal"
+						class="btn red modal-close waves-effect waves-light"
+					>
+						Cancel
+					</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			require('./assets/dist/js/bundle.js');
+		</script>
+	</body>
+</html>

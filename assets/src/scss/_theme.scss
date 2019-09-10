@@ -1,0 +1,142 @@
+$primaryColor: #fff;
+$secondaryColor: #000;
+$tertiaryColor: var(--purple-color);
+$quaternaryColor: var(--blue-color);
+@import '../../../node_modules/grapesjs/src/styles/scss/main.scss';
+
+.gjs-block-category .gjs-title,
+.gjs-category-title,
+.gjs-clm-tags .gjs-sm-title,
+.gjs-layer-title,
+.gjs-sm-sector .gjs-sm-title {
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.gjs-block-category.gjs-open,
+.gjs-category-open,
+.gjs-sm-open.gjs-clm-tags,
+.gjs-sm-sector.gjs-sm-open {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gjs-clm-tags,
+.gjs-sm-sector {
+    font-weight: 400;
+}
+
+.gjs-layer {
+    .gjs-layer-vis {
+        padding: 9px 5px 7px 10px;
+    }
+    .gjs-layer-count {
+        top: 8px;
+        font-weight: 400;
+    }
+    .gjs-layer-name {
+        padding-left: 8px;
+    }
+}
+
+.gjs-sm-sector {
+    #gjs-sm-caret {
+        float: right;
+        font-size: 14px;
+        top: 4px;
+    }
+    .gjs-sm-field.gjs-sm-composite {
+        background-color: #fff;
+        border: none;
+        padding: 0px;
+        input {
+            color: rgba(0, 0, 0, 0.87);
+            background-color: #fff;
+        }
+        select {
+            color: rgba(0, 0, 0, 0.87);
+            background-color: transparent;
+        }
+        .gjs-sm-properties {
+            padding: 2px 0px;
+        }
+        .gjs-sm-property {
+            padding-left: 0;
+            padding-right: 4px;
+        }
+    }
+    .gjs-sm-title {
+        background-color: inherit;
+        padding: 10px 6px;
+        font-weight: 400;
+        transition: 0.4s background;
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 14px;
+        &:hover {
+            background-color: #eee;
+        }
+    }
+    background-color: #fff;
+}
+
+.gjs-field {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    .gjs-field-units {
+        color: rgba(0, 0, 0, 0.87);
+    }
+    .gjs-field-arrows {
+        .gjs-field-arrow-u {
+            border-bottom-color: rgba(0, 0, 0, 0.87);
+        }
+        .gjs-field-arrow-d {
+            border-top-color: rgba(0, 0, 0, 0.87);
+        }
+    }
+    .gjs-d-s-arrow {
+        border-top-color: rgba(0, 0, 0, 0.87);
+    }
+    select {
+        border: none;
+        color: rgba(0, 0, 0, 0.87);
+        &:focus {
+            outline: none;
+        }
+        option {
+            background-color: #fff;
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 12px;
+        }
+    }
+}
+
+.gjs-clm-tags .gjs-sm-stack #gjs-sm-add,
+.gjs-color-main,
+.gjs-off-prv,
+.gjs-sm-sector .gjs-sm-stack #gjs-sm-add {
+    color: rgba(0, 0, 0, 0.87);
+    fill: rgba(0, 0, 0, 0.87);
+}
+
+.gjs-clm-tags {
+    .gjs-clm-tag {
+        border-radius: 0px;
+        color: #fff;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        padding: 6px 8px;
+        #gjs-clm-close {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        #gjs-clm-checkbox {
+            font-size: 12px;
+        }
+    }
+    #gjs-clm-new {
+        color: rgba(0, 0, 0, 0.87);
+    }
+    #gjs-clm-add-tag {
+        border: none;
+        color: rgba(0, 0, 0, 0.1);
+    }
+}
