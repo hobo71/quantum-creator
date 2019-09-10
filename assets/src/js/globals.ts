@@ -25,6 +25,8 @@ const Waves = require('node-waves');
 window.Waves = Waves;
 Waves.init();
 
+const createHTML = require('create-html');
+
 require('betterial');
 
 const electronRemote = require('electron').remote;
@@ -41,7 +43,8 @@ globals.variables = {
 	Waves,
 	parser,
 	electronRemote,
-	path,
+    path,
+    createHTML
 };
 
 // jQuery Elements
@@ -67,6 +70,12 @@ globals.elements = {
 };
 
 // Global Functions
+/**
+ * Displays a Error Box in the current window
+ * 
+ * @param title Title of error box
+ * @param message Message displayed in error box
+ */
 function errorBox(title: String, message: String) {
 	electronRemote.dialog.showMessageBox(electronRemote.getCurrentWindow(), {
 		type: 'error',
@@ -75,11 +84,14 @@ function errorBox(title: String, message: String) {
 	});
 }
 
-function toUNIX<String>(text: string) {
-	return text
-		.toString()
-		.toLowerCase()
-		.replace(/ /g, '-');
+/**
+ * Removes spaces from string and converts it to lowercase
+ *
+ * @param text Text to convert into a unix string.
+ */
+
+function toUNIX(text: string): String {
+	return text.toLowerCase().replace(/ /g, '-');
 }
 
 // Global JS Functions
