@@ -43,8 +43,8 @@ globals.variables = {
 	Waves,
 	parser,
 	electronRemote,
-    path,
-    createHTML
+	path,
+	createHTML,
 };
 
 // jQuery Elements
@@ -72,7 +72,7 @@ globals.elements = {
 // Global Functions
 /**
  * Displays a Error Box in the current window
- * 
+ *
  * @param title Title of error box
  * @param message Message displayed in error box
  */
