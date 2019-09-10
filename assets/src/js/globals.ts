@@ -75,41 +75,6 @@ function errorBox(title: String, message: String) {
 	});
 }
 
-function generateHtmlTemplate<String>(
-	scripts: Array<string>,
-	styles: Array<string>,
-	body: String,
-	style: String
-) {
-	let html = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        ${styles
-			.map((i) => {
-				return `<link rel="stylesheet" href="${i}" /> \n`;
-			})
-			.join('')}
-        <style>
-            ${style}
-        </style>
-        <title>Page Title</title>
-    </head>
-    <body>
-        ${body}
-
-        ${scripts
-			.map((i) => {
-				return `<script src="${i}"></script> \n`;
-			})
-			.join('')}
-    </body>
-    </html>`;
-	return html;
-}
-
 function toUNIX<String>(text: string) {
 	return text
 		.toString()
@@ -120,7 +85,6 @@ function toUNIX<String>(text: string) {
 // Global JS Functions
 globals.functions = {
 	errorBox,
-	generateHtmlTemplate,
 	toUNIX,
 };
 

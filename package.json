@@ -22,6 +22,7 @@
 	"dependencies": {
 		"animejs": "^3.1.0",
 		"betterial": "^1.1.2",
+		"create-html": "^4.1.0",
 		"electron-context-menu": "^0.12.1",
 		"electron-debug": "^3.0.0",
 		"electron-store": "^3.3.0",
