@@ -30,6 +30,8 @@ const path = require('path');
 // jQuery Elements
 let $newProjectBtn = $('#new-project-btn') as JQuery;
 let $openProjectBtn = $('#open-project-btn') as JQuery;
+let $closeProjectBtn = $("a[href='#new-project-modal'].modal-close") as JQuery;
+
 let $newProjectSelectFolderBtn = $('#new-project-select-folder-btn') as JQuery;
 let $createNewProjectBtn = $('a#create-new-project-btn') as JQuery;
 
@@ -39,15 +41,17 @@ let $newProjectPathInput = $('input#new-project-path-input') as JQuery;
 let $newProjectModal = $('.modal#new-project-modal') as any;
 
 // Global Functions
+
 /**
- * Displays a Error Box in the current window
+ * Displays any type of dialog in the current window.
  *
- * @param title Title of error box
- * @param message Message displayed in error box
+ * @param title Title of dialog
+ * @param message Message displayed dialog
+ * @param type Type of message box: ['info', 'error', 'question', 'warning']
  */
-function errorBox(title: String, message: String) {
+function showDialog(type: String, title: String, message: String) {
 	electronRemote.dialog.showMessageBox(electronRemote.getCurrentWindow(), {
-		type: 'error',
+		type: type,
 		title: title,
 		message: message,
 	});
@@ -77,6 +81,7 @@ const globals = {
 	elements: {
 		$newProjectBtn,
 		$openProjectBtn,
+		$closeProjectBtn,
 		$newProjectSelectFolderBtn,
 		$createNewProjectBtn,
 		$newProjectNameInput,
@@ -84,7 +89,7 @@ const globals = {
 		$newProjectModal,
 	},
 	functions: {
-		errorBox,
+		showDialog,
 		toUNIX,
 	},
 };
