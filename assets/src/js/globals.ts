@@ -1,9 +1,3 @@
-let globals = {
-	variables: {},
-	elements: {},
-	functions: {},
-};
-
 // Global Variables And Libraries
 const $ = require('jquery');
 const jQuery = require('jquery');
@@ -33,41 +27,16 @@ const electronRemote = require('electron').remote;
 
 const path = require('path');
 
-// Global variables
-globals.variables = {
-	$,
-	jQuery,
-	grapesjs,
-	fse,
-	anime,
-	Waves,
-	parser,
-	electronRemote,
-	path,
-	createHTML,
-};
-
 // jQuery Elements
-let $newProjectBtn = $('#new-project-btn') as any;
-let $openProjectBtn = $('#open-project-btn') as any;
-let $newProjectSelectFolderBtn = $('#new-project-select-folder-btn') as any;
-let $createNewProjectBtn = $('a#create-new-project-btn') as any;
+let $newProjectBtn = $('#new-project-btn') as JQuery;
+let $openProjectBtn = $('#open-project-btn') as JQuery;
+let $newProjectSelectFolderBtn = $('#new-project-select-folder-btn') as JQuery;
+let $createNewProjectBtn = $('a#create-new-project-btn') as JQuery;
 
-let $newProjectNameInput = $('input#new-project-name-input') as any;
-let $newProjectPathInput = $('input#new-project-path-input') as any;
+let $newProjectNameInput = $('input#new-project-name-input') as JQuery;
+let $newProjectPathInput = $('input#new-project-path-input') as JQuery;
 
 let $newProjectModal = $('.modal#new-project-modal') as any;
-
-// Global HTML Elements
-globals.elements = {
-	$newProjectBtn,
-	$openProjectBtn,
-	$newProjectSelectFolderBtn,
-	$createNewProjectBtn,
-	$newProjectNameInput,
-	$newProjectPathInput,
-	$newProjectModal,
-};
 
 // Global Functions
 /**
@@ -94,10 +63,30 @@ function toUNIX(text: string): String {
 	return text.toLowerCase().replace(/ /g, '-');
 }
 
-// Global JS Functions
-globals.functions = {
-	errorBox,
-	toUNIX,
+const globals = {
+	variables: {
+		$,
+		fse,
+		grapesjs,
+		anime,
+		parser,
+		createHTML,
+		electronRemote,
+		path,
+	},
+	elements: {
+		$newProjectBtn,
+		$openProjectBtn,
+		$newProjectSelectFolderBtn,
+		$createNewProjectBtn,
+		$newProjectNameInput,
+		$newProjectPathInput,
+		$newProjectModal,
+	},
+	functions: {
+		errorBox,
+		toUNIX,
+	},
 };
 
 export default globals;
