@@ -69,6 +69,11 @@
 				}
 			]
 		},
+		"extraFiles": [{
+			"from": "build/",
+			"to": "build/",
+			"filter": ["icon.png"]
+		}],
 		"directories": {
 			"output": "./releases/"
 		}
