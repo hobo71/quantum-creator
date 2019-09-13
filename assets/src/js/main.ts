@@ -3,6 +3,10 @@ import globals from './globals';
 const { $ } = globals.variables;
 
 $(document).ready(() => {
+	$('#start-icon').attr(
+		'src',
+		globals.variables.path.join(process.cwd(), 'build/icon.png')
+	);
 	globals.elements.$newProjectModal.modal();
 });
 

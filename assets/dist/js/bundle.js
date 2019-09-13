@@ -18,6 +18,7 @@ Waves.init();
 const createHTML = require('create-html');
 require('betterial');
 const electronRemote = require('electron').remote;
+const { is } = require('electron-util');
 const path = require('path');
 // jQuery Elements
 let $newProjectBtn = $('#new-project-btn');
@@ -59,6 +60,7 @@ const globals = {
         anime,
         parser,
         createHTML,
+        is,
         electronRemote,
         path,
     },
@@ -80,6 +82,7 @@ const globals = {
 
 const { $: $$1 } = globals.variables;
 $$1(document).ready(() => {
+    $$1('#start-icon').attr('src', globals.variables.path.join(process.cwd(), 'build/icon.png'));
     globals.elements.$newProjectModal.modal();
 });
 // Select folder for new project button click

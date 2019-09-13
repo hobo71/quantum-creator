@@ -24,6 +24,7 @@ const createHTML = require('create-html');
 require('betterial');
 
 const electronRemote = require('electron').remote;
+const { is } = require('electron-util');
 
 const path = require('path');
 
@@ -75,6 +76,7 @@ const globals = {
 		anime,
 		parser,
 		createHTML,
+		is,
 		electronRemote,
 		path,
 	},
