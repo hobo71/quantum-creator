@@ -83,14 +83,19 @@ const globals = {
 const { $: $$1 } = globals.variables;
 $$1(document).ready(() => {
     $$1('#start-icon').attr('src', globals.variables.path.join(process.cwd(), 'build/icon.png'));
-    globals.elements.$newProjectModal.modal();
+    globals.elements.$newProjectModal.modal({
+        topOffset: '5%',
+        dismissable: false,
+    });
 });
 // Select folder for new project button click
 globals.elements.$newProjectSelectFolderBtn.click(() => {
     let newProjectPath = globals.variables.electronRemote.dialog.showOpenDialog({
         properties: ['openDirectory'],
-    })[0];
-    globals.elements.$newProjectPathInput.val(newProjectPath);
+    });
+    if (typeof newProjectPath != typeof undefined || newProjectPath != []) {
+        globals.elements.$newProjectPathInput.val(newProjectPath);
+    }
 });
 globals.elements.$createNewProjectBtn.click(() => {
     let newProjectName = globals.elements.$newProjectNameInput.val();
